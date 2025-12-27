@@ -44,14 +44,14 @@ def generate_certificate(student_name, college_name, event_name, filename):
         c.rect(0, 0, width, height, fill=1)
 
     # ---------------- Student Name ----------------
-    font_size_name = 20
+    font_size_name = 18
     max_width = width - 100
     while c.stringWidth(student_name, "Times-Bold", font_size_name) > max_width and font_size_name > 12:
         font_size_name -= 1
 
     c.setFont("Times-Bold", font_size_name)
     c.setFillColorRGB(0, 0, 0)
-    c.drawCentredString(width / 2, 455/ 2 + 50, student_name)
+    c.drawCentredString(width / 1.75, 455/ 2 + 50, student_name)
 
     # ---------------- Event Name ----------------
     if event_name:
@@ -82,21 +82,21 @@ def generate_certificate(student_name, college_name, event_name, filename):
 
     try:
         # HOD Signature (left)
-        hod_path = r"C:\Users\sakth\OneDrive\Desktop\sbc certificate\bad2f232c122499f81dfcac97bbdbd71[1].jpg"
+        hod_path = r""
         if os.path.exists(hod_path):
             c.drawImage(hod_path, width/4 - 145, sig_y - 30, width=140, height=20, mask='auto')
         c.setFont("Times-Roman", 12)
         c.drawCentredString(width/2, sig_y - 50, "")
 
         # Principal Signature (center)
-        principal_path = r"C:\Users\sakth\OneDrive\Desktop\sbc certificate\34a3b3aee65c46438750496da31964ae[1].jpg"
+        principal_path = r""
         if os.path.exists(principal_path):
             c.drawImage(principal_path, width/2 - 200/2, sig_y - 30, width=150, height=20, mask='auto')
         c.setFont("Times-Roman", 12)
         c.drawCentredString(width/2, sig_y - 20, "")
 
         # Director Signature (right)
-        director_path = r"C:\Users\sakth\OneDrive\Desktop\sbc certificate\7857a1c9985c42c6b921fccf2ef59b23[1].jpg"
+        director_path = r""
         if os.path.exists(director_path):
             c.drawImage(director_path, 3*width/4 - 55, sig_y - 30, width=sig_width, height=30, mask='auto')
         c.setFont("Times-Roman", 12)
